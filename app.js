@@ -12,11 +12,12 @@ app.use(cors());
 app.get("/login", (request, response) => {
   const { username, password } = request.body;
 
-  if (username == data.username && password == data.password) {
-    response.status(200);
-  } else {
-    response.send("username or password not matched");
-  }
+//   if (username == data.username && password == data.password) {
+//     response.status(200);
+//   } else {
+//     response.send("username or password not matched");
+//   }
+  response.send(data);
 });
 
 app.listen(process.env.PORT || 3000, () =>
