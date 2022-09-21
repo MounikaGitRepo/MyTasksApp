@@ -7,7 +7,13 @@ data = {
 };
 
 app.get("/login", (request, response) => {
-  response.send(data);
+  const {username , password } = request.body;
+  if(username == data.username && password == data.password) {
+     response.status(200)
+  }
+  else{
+  response.send(error_msg : "username or password not matched");
+  }
 });
 
 app.listen(process.env.PORT || 3000, () =>
