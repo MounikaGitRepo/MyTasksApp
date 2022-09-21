@@ -8,11 +8,12 @@ data = {
 
 app.get("/login", (request, response) => {
   const {username , password } = request.body;
+  
   if(username == data.username && password == data.password) {
-     response.status(200)
+     response.status(200);
   }
   else{
-  response.send(error_msg : "username or password not matched");
+  response.send("username or password not matched");
   }
 });
 
